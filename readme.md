@@ -1,11 +1,11 @@
 
 ## About
-Official implementation of [TTADDA-UAV](https://data.4tu.nl/my/collections/936b5772-09fc-4856-983d-1f9cc2f38d15/edit)
- dataset: 
+Official implementation of [TTADDA-UAV](https://data.4tu.nl/my/collections/936b5772-09fc-4856-983d-1f9cc2f38d15/edit) dataset. **Currently in review**
 
 
 The dataset is related to the paper:
-TODO link to paper
+
+**TODO add link to paper after acceptance**
 [TTADDA-UAV: RGB and multispectral high-resolution UAV monitoring of Potato fields across Japan and the Netherlands
 ]()
 
@@ -29,7 +29,7 @@ Settings are described in the [config.yaml](config.yaml) file.
 
 
 ## Citation
-TODO
+**TODO after publication**
 
 ## Funding
 This research was funded by the TTADDA[https://www.ttadda.com/]. A public private partnership between companies in the Netherlands and Japan 
