@@ -1,0 +1,19 @@
+##config_file
+project_dir: "data/TTADDA_UAV_01"
+
+## collection: 
+url_list:
+  TTADDA_metadata: "url on request"
+  TTADDA_NARO_2021: "url on request"
+  TTADDA_NARO_2022: "url on request"
+  TTADDA_NARO_2023: "url on request"
+  TTADDA_WUR_2022: "url on request"
+  TTADDA_WUR_2023: "url on request"
+
+gb_dict:
+  TTADDA_metadata: 0.1
+  TTADDA_NARO_2021: 12.63
+  TTADDA_NARO_2022: 27.21
+  TTADDA_NARO_2023: 37.02
+  TTADDA_WUR_2022: 38.85
+  TTADDA_WUR_2023: 350.0
