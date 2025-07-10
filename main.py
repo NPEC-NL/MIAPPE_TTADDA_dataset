@@ -8,22 +8,10 @@
 # Usage: see if__name__
 
 
-import os
-import sys
-import argparse
-import numpy as np
-# import open3d as o3d
-# import matplotlib.pyplot as plt
-import json
-import matplotlib.pyplot as plt
 
 from tqdm import tqdm
 import requests
 from zipfile import ZipFile
-from pathlib import Path
-import pandas as pd
-# import natsort
-# from omegaconf import dictconfig
 import config
 
 
