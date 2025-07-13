@@ -14,7 +14,7 @@ class loadMIAPPE():
 
     def get_data_id(self, temp_dataId, temp_variableId, obsUnitId=None, vis=False):
         # Get the file name for the given dataId
-        file_name = self.data_folder / self.excel_file["Data file_2"][self.excel_file["Data file_2"]["dataId"] == temp_dataId]["dataFileLink"].values[0]
+        file_name = self.data_folder / self.excel_file["Data file"][self.excel_file["Data file"]["dataId"] == temp_dataId]["dataFileLink"].values[0]
         # Ensure temp_variableId is a list
         if isinstance(temp_variableId, list):
             columns = ["collectionDate", "obsUnitId"] + temp_variableId
@@ -45,14 +45,14 @@ class loadMIAPPE():
 
     def get_observed_variables(self, temp_obsUnitId, temp_variableId, vis=False):
         if isinstance(temp_variableId, list):
-            rows = self.excel_file["Observed Variable_2"][
-                (self.excel_file["Observed Variable_2"]["obsUnitId"] == temp_obsUnitId) &
-                (self.excel_file["Observed Variable_2"]["variableId"].isin(temp_variableId))
+            rows = self.excel_file["Observed Variable"][
+                (self.excel_file["Observed Variable"]["obsUnitId"] == temp_obsUnitId) &
+                (self.excel_file["Observed Variable"]["variableId"].isin(temp_variableId))
             ]
         else:
-            rows = self.excel_file["Observed Variable_2"][
-                (self.excel_file["Observed Variable_2"]["obsUnitId"] == temp_obsUnitId) &
-                (self.excel_file["Observed Variable_2"]["variableId"] == temp_variableId)
+            rows = self.excel_file["Observed Variable"][
+                (self.excel_file["Observed Variable"]["obsUnitId"] == temp_obsUnitId) &
+                (self.excel_file["Observed Variable"]["variableId"] == temp_variableId)
             ]
         
         result = []
@@ -65,11 +65,11 @@ class loadMIAPPE():
 
     def get_observation_unit_info(self, temp_studyId=None, temp_obsUnitId=None, verbose=True):
         if temp_studyId is not None:
-            df_temp = self.excel_file["Observation Unit_2"][
-                (self.excel_file["Observation Unit_2"]["studyId"] == temp_studyId)]
+            df_temp = self.excel_file["Observation Unit"][
+                (self.excel_file["Observation Unit"]["studyId"] == temp_studyId)]
         elif temp_obsUnitId is not None:
-            df_temp = self.excel_file["Observation Unit_2"][
-                (self.excel_file["Observation Unit_2"]["obsUnitId"] == temp_obsUnitId)]
+            df_temp = self.excel_file["Observation Unit"][
+                (self.excel_file["Observation Unit"]["obsUnitId"] == temp_obsUnitId)]
         else:
             raise ValueError("Either temp_studyId or temp_obsUnitId must be provided.")
         
