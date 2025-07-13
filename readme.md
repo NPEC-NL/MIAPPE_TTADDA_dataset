@@ -17,6 +17,9 @@ pip install omegaconf
 
 ## Usage
 Make sure to extract and download the dataset, this will be done automatically if path can not be found:
+
+**IMPORTANT automatically downloading is currently disabled. This will be enabled after acceptance data in brief paper. The data can only be downloaded with private links. To run main.py download the "MIAPPE_Minimal_Spreadsheet_Template_TTADDAv4.xlsx" and copy to current folder**
+
 ```
 python3 main.py
 ```
