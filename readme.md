@@ -13,6 +13,9 @@ The dataset is related to the paper:
 This software is tested on Python 3.11. To install the dependencies, run:
 ```
 pip install omegaconf
+pip install pandas
+pip install geopandas
+pip install openpyxl
 ```
 
 ## Usage
