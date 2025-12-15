@@ -73,7 +73,7 @@ class TTADDA_UAV():
             # if not self.project_dir.exists():
             #     self.project_dir.mkdir()
 
-            self.downloadFile = f"{sub_folder}.zip"
+            self.downloadFile = f"{sub_folder}_download.zip"
             if (self.project_dir / self.downloadFile).is_file():
                 print("Already downloaded but not unzipped")
                 return True
