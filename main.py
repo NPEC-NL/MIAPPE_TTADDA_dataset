@@ -57,7 +57,7 @@ class TTADDA_UAV():
     def check_url(self, sub_folder, url):
         user_input = f"Data not found {self.project_dir / sub_folder}"
         print(user_input)
-        if not self.__download(sub_folder, url):
+        if self.__download(sub_folder, url):
             self.__unzip(sub_folder)
 
         print("Successfully loaded the WURTomato dataset")
@@ -76,13 +76,13 @@ class TTADDA_UAV():
             self.downloadFile = f"{sub_folder}.zip"
             if (self.project_dir / self.downloadFile).is_file():
                 print("Already downloaded but not unzipped")
-                return
+                return True
 
             response = requests.get(str(url), stream=True)
             if response.status_code == 200:
                 print(f"Downloading, this may take a while ({sub_folder} is {self.gb_dict[sub_folder]}GB)...")
                 total_size = int(response.headers.get('content-length', 0))  # Get total size in bytes
-                block_size = 8192*32  # Or whatever chunk size you want
+                block_size = 8192  # Or whatever chunk size you want
                 progress_bar = tqdm(total=total_size, unit='iB', unit_scale=True)
 
                 with open(self.project_dir / self.downloadFile, "wb") as file:
@@ -92,11 +92,12 @@ class TTADDA_UAV():
                             progress_bar.update(len(chunk))
                 progress_bar.close()
                 print("File downloaded successfully.")
+                return True
             else:
                 print(f"Failed to download file. Status code: {response.status_code}")
         else:
             print("File already download and extracted.")
-            return True
+            return False
 
     # Taken from https://www.geeksforgeeks.org/unzipping-files-in-python/
     def __unzip(self, sub_folder):
