@@ -3,12 +3,12 @@ project_dir: "data/TTADDA_UAV_01"
 
 ## collection: 
 url_list:
-  TTADDA_metadata: "url on request"
-  TTADDA_NARO_2021: "url on request"
-  TTADDA_NARO_2022: "url on request"
-  TTADDA_NARO_2023: "url on request"
-  TTADDA_WUR_2022: "url on request"
-  TTADDA_WUR_2023: "url on request"
+  TTADDA_metadata: https://data.4tu.nl/ndownloader/items/20ef3f20-ec7b-4236-b13b-e4f7d54a34bf/versions/1
+  TTADDA_NARO_2021: https://data.4tu.nl/ndownloader/items/f2307c47-9a1a-474a-a0d9-e09ee1b7512c/versions/1
+  # TTADDA_NARO_2022: https://data.4tu.nl/ndownloader/items/ed9b9cd6-8d69-411b-9054-1ecce543ac1b/versions/1
+  # TTADDA_NARO_2023: https://data.4tu.nl/ndownloader/items/c5f013d0-85e0-4feb-b653-a3c59683a2bc/versions/1
+  # TTADDA_WUR_2022: https://data.4tu.nl/ndownloader/items/1f628b56-3246-4aab-accd-1193b1566763/versions/1
+  # TTADDA_WUR_2023: https://data.4tu.nl/ndownloader/items/75c01fac-f00a-4980-8cd8-cd4499f1aa98/versions/1
 
 gb_dict:
   TTADDA_metadata: 0.1

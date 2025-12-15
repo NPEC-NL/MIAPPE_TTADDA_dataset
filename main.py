@@ -44,9 +44,9 @@ class TTADDA_UAV():
         print("Warning currently automatically downloading the dataset does not work, because data is not yet published...")
         print(f"download files manually and unzip them in {self.project_dir}")
 
-        for key, value in self.url_list.items():
-            print(f"{key}: {value}")
-        return
+        # for key, value in self.url_list.items():
+        #     print(f"{key}: {value}")
+        # return
         self.check_data()
 
     def check_data(self):
@@ -57,8 +57,8 @@ class TTADDA_UAV():
     def check_url(self, sub_folder, url):
         user_input = f"Data not found {self.project_dir / sub_folder}"
         print(user_input)
-        self.__download(sub_folder, url)
-        self.__unzip(sub_folder, url)
+        if not self.__download(sub_folder, url):
+            self.__unzip(sub_folder)
 
         print("Successfully loaded the WURTomato dataset")
 
@@ -78,11 +78,11 @@ class TTADDA_UAV():
                 print("Already downloaded but not unzipped")
                 return
 
-            response = requests.get("https://" + str(url), stream=True)
+            response = requests.get(str(url), stream=True)
             if response.status_code == 200:
                 print(f"Downloading, this may take a while ({sub_folder} is {self.gb_dict[sub_folder]}GB)...")
                 total_size = int(response.headers.get('content-length', 0))  # Get total size in bytes
-                block_size = 8192  # Or whatever chunk size you want
+                block_size = 8192*32  # Or whatever chunk size you want
                 progress_bar = tqdm(total=total_size, unit='iB', unit_scale=True)
 
                 with open(self.project_dir / self.downloadFile, "wb") as file:
@@ -96,6 +96,7 @@ class TTADDA_UAV():
                 print(f"Failed to download file. Status code: {response.status_code}")
         else:
             print("File already download and extracted.")
+            return True
 
     # Taken from https://www.geeksforgeeks.org/unzipping-files-in-python/
     def __unzip(self, sub_folder):
